@@ -20,3 +20,19 @@ questions = [
         "answer": "B"
     },
 ]
+
+def quiz(questions):
+    score = 0
+    for question in questions:
+        print(question["prompt"])
+        for option in question["options"]:
+            print(option)
+        answer = input("Please enter your answer: ").upper()
+        if answer == question["answer"]:
+            print("Correct answer!\n")
+            score += 1
+        else:
+            print(f'Incorrect answer! The correct answer was {question["answer"]}.\n')
+    print(f"You got {score} correct answers out of a total of {len(questions)}!")
+
+quiz(questions)
